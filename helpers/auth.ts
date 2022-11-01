@@ -11,7 +11,7 @@ export function validateToken(handler) {
         const { id } = jwt.verify(token, process.env.SECRET);
         user = await prisma.user.findUniqueOrThrow({
           where: { id },
-          //   select: { id: true, name: true, email: true },
+          select: { id: true, name: true, email: true },
         });
       } catch (error) {
         res.status(401).json({ error: "Not Authorized" });
