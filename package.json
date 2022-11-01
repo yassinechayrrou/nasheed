@@ -21,6 +21,7 @@
     "cookies": "^0.8.0",
     "easy-peasy": "^5.1.0",
     "format-duration": "^2.0.0",
+    "formik": "^2.2.9",
     "framer-motion": "^6.5.1",
     "jsonwebtoken": "^8.5.1",
     "next": "12.3.1",
