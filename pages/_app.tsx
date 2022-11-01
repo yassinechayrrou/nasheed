@@ -4,6 +4,8 @@ import AppLayout from "../components/AppLayout";
 
 function MyApp({ Component, pageProps }) {
   const theme = extendTheme({
+    initialColorMode: "dark",
+    useSystemColorMode: false,
     colors: {
       gray: {
         100: "#F5f5f5",
@@ -33,9 +35,13 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ChakraProvider theme={theme}>
-      <AppLayout>
+      {Component.isAuthPage ? (
         <Component {...pageProps} />
-      </AppLayout>
+      ) : (
+        <AppLayout>
+          <Component {...pageProps} />
+        </AppLayout>
+      )}
     </ChakraProvider>
   );
 }
